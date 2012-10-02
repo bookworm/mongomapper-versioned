@@ -8,13 +8,10 @@ module Versioned
     class Engine < ::Rails::Engine
       engine_name :versioned
       initializer "versioned.initialize" do |app|
-        MongoMapper::Document.plugin(Versioned)
       end
       initializer 'versioned.check_indexes', :after=> :disable_dependency_loading do
         Version.check_indexes
       end
     end
-  else
-    MongoMapper::Document.plugin(Versioned)
   end
 end

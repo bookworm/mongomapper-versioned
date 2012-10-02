@@ -12,6 +12,7 @@ Add the `versioned` declaration to the MongoMapper document models you want to k
 
 ````ruby
 class User
+  plugin Versioned
   versioned
 
   key :name, String
@@ -33,6 +34,7 @@ Use the `max` option to specifiy the maximum number of versions you want to keep
 
 ````ruby
 class User
+  plugin Versioned
   versioned max: 10
 
   key :name, String
@@ -46,6 +48,7 @@ This doesn't work with the `max` option.  Use one or the other.
 
 ````ruby
 class User
+  plugin Versioned
   versioned
 
   key :name, String
