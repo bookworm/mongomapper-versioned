@@ -4,7 +4,7 @@ require 'yajl'
 
 class Version
   include MongoMapper::Document
-  plugin MongoMapper::Plugins::AutoIncrement
+  include MongoMapper::Plugins::AutoIncrement
   auto_increment!
   
   key :doc, Hash
